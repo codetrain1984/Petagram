@@ -7,7 +7,7 @@ import { Box, Stack } from '@mui/material'
 
 function App() {
   return (
-    <Box>
+    <Box bgcolor="primary">
       <Navbar />
       <Stack direction="row" spacing={2} justifyContent="space-between">
         <Sidebar />
