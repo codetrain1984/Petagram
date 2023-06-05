@@ -45,18 +45,13 @@ export default function Navbar() {
         <Stack
           direction="row"
           sx={{
-            width: '50%',
+            width: { xs: '80%', sm: '50%' },
             display: 'flex',
             alignItems: 'center',
           }}
           spacing={2}
         >
-          <Typography
-            variant="h6"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            Petagram
-          </Typography>
+          <Typography variant="h6">Petagram</Typography>
           <SearchIcon
             sx={{
               cursor: 'pointer',
