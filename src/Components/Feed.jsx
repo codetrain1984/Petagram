@@ -24,10 +24,14 @@ export default function Feed() {
     <Box flex={4} p={2}>
       {postData.map((post) => (
         <>
-          <Card sx={{ margin: 5 }}>
+          <Card sx={{ margin: 3 }}>
             <CardHeader
               avatar={
-                <Avatar sx={{ bgcolor: 'red' }} aria-label="recipe">
+                <Avatar
+                  src="/Image/small-dog.jpg"
+                  sx={{ bgcolor: 'red' }}
+                  aria-label="recipe"
+                >
                   R
                 </Avatar>
               }

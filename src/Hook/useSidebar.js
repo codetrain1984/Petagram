@@ -8,7 +8,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 const useSidebar = () => {
   const sidebarData = [
     {
-      title: 'Homepage',
+      title: 'Home',
       icon: <HomeIcon />,
     },
     {

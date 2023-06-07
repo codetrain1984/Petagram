@@ -14,7 +14,7 @@ export default function RightbarLists() {
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          <Avatar alt="Remy Sharp" src="/Image/group/parrot.jpg" />
         </ListItemAvatar>
         <ListItemText
           primary="Brunch this weekend?"
@@ -26,7 +26,7 @@ export default function RightbarLists() {
                 variant="body2"
                 color="text.primary"
               >
-                Ali Connors
+                Tina
               </Typography>
               {" — I'll be in your neighborhood doing errands this…"}
             </React.Fragment>
@@ -36,7 +36,7 @@ export default function RightbarLists() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+          <Avatar alt="Travis Howard" src="/Image/group/4.jpg" />
         </ListItemAvatar>
         <ListItemText
           primary="Summer BBQ"
@@ -48,7 +48,7 @@ export default function RightbarLists() {
                 variant="body2"
                 color="text.primary"
               >
-                to Scott, Alex, Jennifer
+                to Pepper, Cheesy, Baloo
               </Typography>
               {" — Wish I could come, but I'm out of town this…"}
             </React.Fragment>
@@ -58,7 +58,7 @@ export default function RightbarLists() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+          <Avatar alt="Cindy Baker" src="/Image/group/Cat.jpg" />
         </ListItemAvatar>
         <ListItemText
           primary="Oui Oui"
@@ -70,9 +70,9 @@ export default function RightbarLists() {
                 variant="body2"
                 color="text.primary"
               >
-                Sandra Adams
+                Poochie
               </Typography>
-              {' — Do you have Paris recommendations? Have you ever…'}
+              {' — Do you have party recommendations? Have you ever…'}
             </React.Fragment>
           }
         />

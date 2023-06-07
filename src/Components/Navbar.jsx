@@ -7,7 +7,6 @@ import {
   InputBase,
   Stack,
   Toolbar,
-  Typography,
   styled,
 } from '@mui/material'
 import PetsIcon from '@mui/icons-material/Pets'
@@ -51,28 +50,60 @@ export default function Navbar() {
           }}
           spacing={2}
         >
-          <Typography variant="h6">Petagram</Typography>
-          <SearchIcon
+          <Stack sx={{ width: { xs: '120px', sm: '150px' } }}>
+            <img src="/Image/Petgram-logo.png" alt="Petgram" />
+          </Stack>
+          {/* <Typography variant="h6">Petagram</Typography> */}
+        </Stack>
+        {/* <Stack>
+          <Stack
+            direction="row"
             sx={{
-              cursor: 'pointer',
+              display: { xs: 'none', sm: 'flex' },
+              backgroundColor: 'transparent',
             }}
-            onClick={() => setSearchBtn(!searchBtn)}
-          />
+          >
+            <img
+              src="/Image/group/footprint.png"
+              alt="Footprint"
+              width={30}
+              style={{ marginRight: '8px', opacity: '0.5' }}
+            />
+            <img
+              src="/Image/group/footprint.png"
+              alt="Footprint"
+              width={30}
+              style={{ marginRight: '8px', opacity: '0.5' }}
+            />
+            <img
+              src="/Image/group/footprint.png"
+              alt="Footprint"
+              width={30}
+              style={{ marginRight: '8px', opacity: '0.5' }}
+            />
+          </Stack>
+        </Stack> */}
+
+        <IconBox>
           {searchBtn && (
             <SearchBox>
               <InputBase placeholder="Search..." />
             </SearchBox>
           )}
-        </Stack>
-
-        <IconBox>
-          <Badge badgeContent={4} color="otherColor">
+          <SearchIcon
+            sx={{
+              cursor: 'pointer',
+              display: { xs: 'none', sm: 'block' },
+            }}
+            onClick={() => setSearchBtn(!searchBtn)}
+          />
+          <Badge badgeContent={6} color="otherColor">
             <MailIcon />
           </Badge>
-          <Badge badgeContent={4} color="otherColor">
+          <Badge badgeContent={1} color="otherColor">
             <NotificationsIcon />
           </Badge>
-          <Avatar sx={{ width: 30, height: 30 }} src="/Image/small-dog.jpg" />
+          <Avatar sx={{ width: 40, height: 40 }} src="/Image/small-dog.jpg" />
         </IconBox>
 
         <PetsIcon sx={{ display: { xs: 'block', sm: 'none' } }} />

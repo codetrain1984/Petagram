@@ -5,11 +5,20 @@ import {
   ImageList,
   ImageListItem,
   Typography,
+  styled,
 } from '@mui/material'
 import React from 'react'
 import RightbarLists from './RightbarLists'
 
 export default function Rightbar() {
+  const StyledAvatar = styled(Avatar)({
+    '&:hover': {
+      width: '50px',
+      height: '50px',
+      cursor: 'pointer',
+      transition: 'all 0.5s ease',
+    },
+  })
   return (
     <Box
       flex={2}
@@ -20,15 +29,24 @@ export default function Rightbar() {
     >
       <Box position="fixed" mr={4} mt={3}>
         <Typography variant="h6">Online Friends</Typography>
-        <AvatarGroup max={6} sx={{ margin: '15px' }}>
-          <Avatar alt="Remy Sharp" src="/Image/group/parrot.jpg" />
-          <Avatar alt="Remy Sharp" src="/Image/group/pet-rabbit.jpg" />
-          <Avatar alt="Remy Sharp" src="/Image/group/Cat.jpg" />
-          <Avatar alt="Remy Sharp" src="/Image/group/GettyImages.jpg" />
-          <Avatar alt="Remy Sharp" src="/Image/group/4.jpg" />
-          <Avatar alt="Remy Sharp" src="/Image/group/4.jpg" />
-          <Avatar alt="Remy Sharp" src="/Image/group/4.jpg" />
-          <Avatar alt="Remy Sharp" src="/Image/group/4.jpg" />
+        <AvatarGroup
+          max={6}
+          sx={{
+            margin: '15px',
+          }}
+        >
+          <StyledAvatar
+            sx={{ transition: 'transform: scale(1.5)' }}
+            alt="Remy Sharp"
+            src="/Image/group/parrot.jpg"
+          />
+          <StyledAvatar alt="Remy Sharp" src="/Image/group/pet-rabbit.jpg" />
+          <StyledAvatar alt="Remy Sharp" src="/Image/group/Cat.jpg" />
+          <StyledAvatar alt="Remy Sharp" src="/Image/group/GettyImages.jpg" />
+          <StyledAvatar alt="Remy Sharp" src="/Image/group/4.jpg" />
+          <StyledAvatar alt="Remy Sharp" src="/Image/group/4.jpg" />
+          <StyledAvatar alt="Remy Sharp" src="/Image/group/4.jpg" />
+          <StyledAvatar alt="Remy Sharp" src="/Image/group/4.jpg" />
         </AvatarGroup>
         <Typography variant="h6">Latest Photos</Typography>
         <ImageList
