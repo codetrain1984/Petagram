@@ -63,10 +63,10 @@ export default function Navbar() {
             sx={{ display: { xs: 'none', sm: 'block' }, cursor: 'pointer' }}
             onClick={() => setSearchBtn(!searchBtn)}
           />
-          <Badge badgeContent={5} color="error">
+          <Badge badgeContent={5} color="primary">
             <MailIcon />
           </Badge>
-          <Badge badgeContent={5} color="error">
+          <Badge badgeContent={5} color="primary">
             <NotificationsIcon />
           </Badge>
           <Avatar sx={{ width: 40, height: 40 }} src="/Image/small-dog.jpg" />
@@ -74,33 +74,5 @@ export default function Navbar() {
         <PetsIcon sx={{ display: { xs: 'block', sm: 'none' } }} />
       </StyledToolbar>
     </AppBar>
-
-    //
-
-    //     <IconBox>
-    //       {searchBtn && (
-    //         <SearchBox>
-    //           <InputBase placeholder="Search..." />
-    //         </SearchBox>
-    //       )}
-    //       <SearchIcon
-    //         sx={{
-    //           cursor: 'pointer',
-    //           display: { xs: 'none', sm: 'block' },
-    //         }}
-    //         onClick={() => setSearchBtn(!searchBtn)}
-    //       />
-    //       <Badge badgeContent={6} color="otherColor">
-    //         <MailIcon />
-    //       </Badge>
-    //       <Badge badgeContent={3} color="otherColor">
-    //         <NotificationsIcon />
-    //       </Badge>
-    //       <Avatar sx={{ width: 40, height: 40 }} src="/Image/small-dog.jpg" />
-    //     </IconBox>
-
-    //     <PetsIcon sx={{ display: { xs: 'block', sm: 'none' } }} />
-    //   </StyledToolbar>
-    // </AppBar>
   )
 }
