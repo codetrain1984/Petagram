@@ -11,26 +11,32 @@ const useSidebar = () => {
     {
       title: 'Home',
       icon: <HomeIcon />,
+      link: '/',
     },
     {
       title: 'Groups',
       icon: <GroupIcon />,
+      link: '/grou',
     },
     {
       title: 'Marketplace',
       icon: <StorefrontIcon />,
+      link: '/marketplace',
     },
     {
       title: 'Friends',
       icon: <PersonIcon />,
+      link: '/friends',
     },
     {
       title: 'Setting',
       icon: <SettingsIcon />,
+      link: '/setting',
     },
     {
       title: 'Profile',
       icon: <AccountCircleIcon />,
+      link: '/profile',
     },
   ]
   return { sidebarData }

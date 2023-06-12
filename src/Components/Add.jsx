@@ -41,7 +41,9 @@ export default function Add() {
         sx={{
           position: 'fixed',
           bottom: 20,
-          left: { xs: 'calc(50% - 25px)', md: 30 },
+          left: 30,
+          width: { xs: '40px', sm: '55px' },
+          height: { xs: '40px', sm: '55px' },
         }}
       >
         <Fab color="secondary" aria-label="add">
@@ -58,7 +60,8 @@ export default function Add() {
         <Box
           sx={{ width: { xs: '300px', sm: '400px' } }}
           height={280}
-          bgcolor="white"
+          bgcolor={'background.default'}
+          color={'text.primary'}
           p={3}
           borderRadius={3}
         >

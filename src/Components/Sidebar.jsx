@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   List,
   ListItem,
@@ -8,8 +8,12 @@ import {
   Stack,
 } from '@mui/material'
 import useSidebar from '../Hook/useSidebar'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import WbSunnyIcon from '@mui/icons-material/WbSunny'
+import { Link } from 'react-router-dom'
 
-export default function Sidebar() {
+export default function Sidebar({ mode, setMode }) {
+  const [open, setOpen] = useState(false)
   const { sidebarData } = useSidebar()
   return (
     <>
@@ -19,16 +23,42 @@ export default function Sidebar() {
         direction="column"
         sx={{ display: { xs: 'none', sm: 'block' } }}
       >
-        {sidebarData.map((side) => (
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>{side.icon}</ListItemIcon>
-                <ListItemText primary={side.title} />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        ))}
+        <Stack sx={{ position: 'fixed' }}>
+          {sidebarData.map((side) => (
+            <List>
+              <Link
+                to={side.link}
+                style={{ textDecoration: 'none', color: 'GrayText' }}
+              >
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>{side.icon}</ListItemIcon>
+                    <ListItemText primary={side.title} />
+                  </ListItemButton>
+                </ListItem>
+              </Link>
+            </List>
+          ))}
+          <ListItem
+            onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+            disablePadding
+          >
+            <ListItemButton
+              onClick={() => setOpen(!open)}
+              component="a"
+              href="#simple-list"
+            >
+              <ListItemIcon>
+                {open ? (
+                  <WbSunnyIcon color="warning" />
+                ) : (
+                  <DarkModeIcon color="primary" />
+                )}
+              </ListItemIcon>
+              <ListItemText primary="Theme" />
+            </ListItemButton>
+          </ListItem>
+        </Stack>
       </Stack>
     </>
   )
