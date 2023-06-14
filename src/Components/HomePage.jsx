@@ -1,17 +1,19 @@
 import React from 'react'
-import Sidebar from './Sidebar'
 import Feed from './Feed'
 import Rightbar from './Rightbar'
-import { Stack } from '@mui/material'
+import { Box, Stack } from '@mui/material'
+import Sidebar from './Sidebar'
+import Footer from './Footer'
 
 export default function HomePage() {
   return (
-    <div>
-      <Stack direction="row" spacing={2} justifyContent="space-between">
+    <Box bgcolor={'background.default'}>
+      <Stack flex={4} direction="row" spacing={2}>
         <Sidebar />
         <Feed />
         <Rightbar />
       </Stack>
-    </div>
+      <Footer />
+    </Box>
   )
 }

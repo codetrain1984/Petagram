@@ -4,6 +4,7 @@ import {
   Avatar,
   Badge,
   Box,
+  IconButton,
   InputBase,
   ListItemIcon,
   ListItemText,
@@ -20,14 +21,17 @@ import SearchIcon from '@mui/icons-material/Search'
 import MailIcon from '@mui/icons-material/Mail'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
+import WbSunnyIcon from '@mui/icons-material/WbSunny'
 import useSidebar from '../Hook/useSidebar'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from 'react-router-dom'
+import { useTrueFalse } from '../Hook/useTrueFalse'
 
 export default function Navbar({ mode, setMode }) {
-  const [searchBtn, setSearchBtn] = useState(false)
+  const [searchBtn, setSearchBtn] = useTrueFalse(false)
   const [menu, setMenu] = useState(false)
   const [open, setOpen] = useState(false)
+  const [theme, setTheme] = useTrueFalse(false)
   const { sidebarData } = useSidebar()
 
   const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -69,11 +73,16 @@ export default function Navbar({ mode, setMode }) {
                 sx={{ display: { xs: 'block', sm: 'none' } }}
                 onClick={() => setMenu(!menu)}
               />
-              <Stack
-                sx={{ width: { xs: '120px', sm: '150px' }, marginLeft: '8px' }}
-              >
-                <img src="/Image/Petgram-logo.png" alt="Petgram" />
-              </Stack>
+              <Link to="/">
+                <Stack
+                  sx={{
+                    width: { xs: '120px', sm: '150px' },
+                    marginLeft: '8px',
+                  }}
+                >
+                  <img src="/Image/Petgram-logo.png" alt="Petgram" />
+                </Stack>
+              </Link>
             </Stack>
           </Stack>
 
@@ -85,8 +94,15 @@ export default function Navbar({ mode, setMode }) {
             )}
             <SearchIcon
               sx={{ display: { xs: 'none', sm: 'block' }, cursor: 'pointer' }}
-              onClick={() => setSearchBtn(!searchBtn)}
+              onClick={setSearchBtn}
             />
+
+            <Stack onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
+              <IconButton onClick={setTheme}>
+                {theme ? <WbSunnyIcon color="warning" /> : <DarkModeIcon />}
+              </IconButton>
+            </Stack>
+
             <Badge badgeContent={5} color="primary">
               <MailIcon />
             </Badge>
@@ -136,6 +152,10 @@ export default function Navbar({ mode, setMode }) {
       </AppBar>
       {menu && (
         <Paper
+          id="demo-positioned-menu"
+          aria-labelledby="demo-positioned-button"
+          open={menu}
+          onClose={() => setMenu(false)}
           sx={{
             display: {
               xs: 'block',
@@ -154,7 +174,7 @@ export default function Navbar({ mode, setMode }) {
                   to={sidebar.link}
                   style={{ textDecoration: 'none', color: 'GrayText' }}
                 >
-                  <MenuItem>
+                  <MenuItem onClose={() => setMenu(false)}>
                     <ListItemIcon>{sidebar.icon}</ListItemIcon>
                     <ListItemText>{sidebar.title}</ListItemText>
                   </MenuItem>

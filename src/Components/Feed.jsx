@@ -23,9 +23,10 @@ import LinkIcon from '@mui/icons-material/Link'
 import usePost from '../Hook/usePost'
 import StarOutlineIcon from '@mui/icons-material/StarOutline'
 import ReportGmailerrorredIcon from '@mui/icons-material/ReportGmailerrorred'
+import { useTrueFalse } from '../Hook/useTrueFalse'
 
 export default function Feed() {
-  const [shareIt, setShareIt] = useState(false)
+  const [state, toggle] = useTrueFalse(false)
 
   const [anchorEl, setAnchorEl] = useState(null)
   const { postData } = usePost()
@@ -38,7 +39,7 @@ export default function Feed() {
   }
 
   return (
-    <Box flex={4} p={2} ml={4}>
+    <Box flex={4}>
       {postData.map((post) => (
         <Card sx={{ margin: 3 }}>
           <CardHeader
@@ -109,9 +110,9 @@ export default function Feed() {
               />
             </IconButton>
             <IconButton aria-label="share">
-              <ShareIcon onClick={() => setShareIt(!shareIt)} />
+              <ShareIcon onClick={toggle} />
             </IconButton>
-            {shareIt && (
+            {state && (
               <MenuList>
                 <MenuItem>
                   <img

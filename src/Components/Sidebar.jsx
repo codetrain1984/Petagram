@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
+  Box,
   List,
   ListItem,
   ListItemButton,
@@ -8,22 +9,27 @@ import {
   Stack,
 } from '@mui/material'
 import useSidebar from '../Hook/useSidebar'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import WbSunnyIcon from '@mui/icons-material/WbSunny'
+
 import { Link } from 'react-router-dom'
 
 export default function Sidebar({ mode, setMode }) {
-  const [open, setOpen] = useState(false)
   const { sidebarData } = useSidebar()
   return (
     <>
-      <Stack
+      <Box
         flex={1}
         p={2}
         direction="column"
-        sx={{ display: { xs: 'none', sm: 'block' } }}
+        sx={{
+          display: { xs: 'none', sm: 'block' },
+        }}
       >
-        <Stack sx={{ position: 'fixed' }}>
+        <Stack
+          sx={{
+            position: 'fixed',
+            zIndex: '9999',
+          }}
+        >
           {sidebarData.map((side) => (
             <List>
               <Link
@@ -39,27 +45,8 @@ export default function Sidebar({ mode, setMode }) {
               </Link>
             </List>
           ))}
-          <ListItem
-            onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
-            disablePadding
-          >
-            <ListItemButton
-              onClick={() => setOpen(!open)}
-              component="a"
-              href="#simple-list"
-            >
-              <ListItemIcon>
-                {open ? (
-                  <WbSunnyIcon color="warning" />
-                ) : (
-                  <DarkModeIcon color="primary" />
-                )}
-              </ListItemIcon>
-              <ListItemText primary="Theme" />
-            </ListItemButton>
-          </ListItem>
         </Stack>
-      </Stack>
+      </Box>
     </>
   )
 }

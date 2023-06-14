@@ -18,12 +18,12 @@ export default function Postprofile() {
       </Typography>
       <ImageList
         sx={{
-          width: { xs: 400, sm: 550 },
-          height: { xs: 300, sm: 400 },
-          //   rowHeight: { xs: 154, sm: 184 },
+          width: { xs: 380, sm: 750 },
+          height: { xs: 300, sm: 800 },
+
+          overflowY: 'hidden',
         }}
         cols={3}
-        // rowHeight={164}
       >
         {postData.map((item) => (
           <ImageListItem key={item.img}>

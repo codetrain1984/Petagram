@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import './App.css'
 import Add from './Components/Add'
 import Navbar from './Components/Navbar'
+import routes from './routes'
 
 import { Box, ThemeProvider, createTheme } from '@mui/material'
 import { useRoutes } from 'react-router-dom'
-import routes from './routes'
-// import Extras from './Components/Extras'
+// import Sidebar from './Components/Sidebar'
 
 function App() {
   const [mode, setMode] = useState('light')
@@ -24,7 +24,6 @@ function App() {
         {router}
 
         <Add />
-        {/* <Extras /> */}
       </Box>
     </ThemeProvider>
   )
