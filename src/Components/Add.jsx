@@ -16,7 +16,10 @@ import CameraAltIcon from '@mui/icons-material/CameraAlt'
 import VideocamIcon from '@mui/icons-material/Videocam'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import { useState } from 'react'
+<<<<<<< HEAD
 import React from 'react'
+=======
+>>>>>>> 6d7d02067691dbe16ea74834887a7993a9c75c77
 
 export default function Add() {
   const [open, setOpen] = useState(false)
@@ -41,9 +44,13 @@ export default function Add() {
         sx={{
           position: 'fixed',
           bottom: 20,
+<<<<<<< HEAD
           left: 30,
           width: { xs: '40px', sm: '55px' },
           height: { xs: '40px', sm: '55px' },
+=======
+          left: { xs: 'calc(50% - 25px)', md: 30 },
+>>>>>>> 6d7d02067691dbe16ea74834887a7993a9c75c77
         }}
       >
         <Fab color="secondary" aria-label="add">
@@ -57,6 +64,7 @@ export default function Add() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
+<<<<<<< HEAD
         <Box
           sx={{ width: { xs: '300px', sm: '400px' } }}
           height={280}
@@ -65,6 +73,9 @@ export default function Add() {
           p={3}
           borderRadius={3}
         >
+=======
+        <Box width={400} height={280} bgcolor="white" p={3} borderRadius={3}>
+>>>>>>> 6d7d02067691dbe16ea74834887a7993a9c75c77
           <Typography variant="h6" color="gray" textAlign="center">
             Create Post
           </Typography>
@@ -109,11 +120,15 @@ export default function Add() {
                 <PersonAddIcon sx={{ color: '#7d827e' }} cursor="pointer" />
               </Tooltip>
             </Stack>
+<<<<<<< HEAD
             <Button
               variant="contained"
               color="secondary"
               onClick={() => setOpen(false)}
             >
+=======
+            <Button variant="contained" color="secondary">
+>>>>>>> 6d7d02067691dbe16ea74834887a7993a9c75c77
               Post
             </Button>
           </Stack>

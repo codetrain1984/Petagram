@@ -24,6 +24,7 @@ const usePost = () => {
       img: '/Image/fish.jpg',
       date: 'September 19, 2023',
     },
+<<<<<<< HEAD
     {
       desc:
         'Animals are a window to your soul and a doorway to your spiritual destiny. If you let them into your life and allow them to teach you, you will be better for it.” “Animals are a gift from above for they truly define the words unconditional love.',
@@ -48,6 +49,8 @@ const usePost = () => {
       img: '/Image/group/pet-rabbit.jpg',
       date: 'September 19, 2023',
     },
+=======
+>>>>>>> 6d7d02067691dbe16ea74834887a7993a9c75c77
   ]
   return { postData }
 }
