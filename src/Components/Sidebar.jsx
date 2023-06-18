@@ -6,14 +6,13 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-<<<<<<< HEAD
   Stack,
 } from '@mui/material'
 import useSidebar from '../Hook/useSidebar'
 
 import { Link } from 'react-router-dom'
 
-export default function Sidebar({ mode, setMode }) {
+export default function Sidebar({ mode }) {
   const { sidebarData } = useSidebar()
   return (
     <>
@@ -24,6 +23,8 @@ export default function Sidebar({ mode, setMode }) {
         sx={{
           display: { xs: 'none', sm: 'block' },
         }}
+        bgcolor={'background.default'}
+        color={'text.primary'}
       >
         <Stack
           sx={{
@@ -32,44 +33,24 @@ export default function Sidebar({ mode, setMode }) {
           }}
         >
           {sidebarData.map((side) => (
-            <List>
+            <Box>
               <Link
                 to={side.link}
-                style={{ textDecoration: 'none', color: 'GrayText' }}
+                style={{ textDecoration: 'none', color: '#888' }}
               >
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>{side.icon}</ListItemIcon>
-                    <ListItemText primary={side.title} />
-                  </ListItemButton>
-                </ListItem>
+                <List>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>{side.icon}</ListItemIcon>
+                      <ListItemText primary={side.title} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </Link>
-            </List>
+            </Box>
           ))}
         </Stack>
       </Box>
     </>
-=======
-} from '@mui/material'
-import useSidebar from '../Hook/useSidebar'
-
-export default function Sidebar() {
-  const { sidebarData } = useSidebar()
-  return (
-    <Box flex={1} p={2} sx={{ display: { xs: 'none', sm: 'block' } }}>
-      <Box position="fixed">
-        {sidebarData.map((sidebar) => (
-          <List sx={{ '&:hover': { color: '#9c058a' } }}>
-            <ListItem disablePadding>
-              <ListItemButton LinkComponent={'a'} href="#">
-                <ListItemIcon>{sidebar.icon}</ListItemIcon>
-                <ListItemText primary={sidebar.title} />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        ))}
-      </Box>
-    </Box>
->>>>>>> 6d7d02067691dbe16ea74834887a7993a9c75c77
   )
 }

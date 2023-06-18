@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import React, { useState } from 'react'
-=======
-import usePost from '../Hook/usePost'
-import React from 'react'
->>>>>>> 6d7d02067691dbe16ea74834887a7993a9c75c77
 import {
   Avatar,
   Box,
@@ -14,20 +9,16 @@ import {
   CardMedia,
   Checkbox,
   IconButton,
-<<<<<<< HEAD
   ListItemIcon,
   Menu,
   MenuItem,
   MenuList,
-=======
->>>>>>> 6d7d02067691dbe16ea74834887a7993a9c75c77
   Typography,
 } from '@mui/material'
 import ShareIcon from '@mui/icons-material/Share'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-<<<<<<< HEAD
 import LinkIcon from '@mui/icons-material/Link'
 import usePost from '../Hook/usePost'
 import StarOutlineIcon from '@mui/icons-material/StarOutline'
@@ -157,59 +148,6 @@ export default function Feed() {
             )}
           </CardActions>
         </Card>
-=======
-
-export default function Feed() {
-  const { postData } = usePost()
-  console.log(postData)
-  return (
-    <Box flex={4} p={2}>
-      {postData.map((post) => (
-        <>
-          <Card sx={{ margin: 3 }}>
-            <CardHeader
-              avatar={
-                <Avatar
-                  src="/Image/small-dog.jpg"
-                  sx={{ bgcolor: 'red' }}
-                  aria-label="recipe"
-                >
-                  R
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title="Pally"
-              subheader={post.date}
-            />
-            <CardMedia
-              component="img"
-              height="20%"
-              image={post.img}
-              alt="Pets"
-            />
-            <CardContent>
-              <Typography variant="body2" color="text.secondary">
-                {post.desc}
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <Checkbox
-                  icon={<FavoriteBorderIcon />}
-                  checkedIcon={<FavoriteIcon sx={{ color: 'red' }} />}
-                />
-              </IconButton>
-              <IconButton aria-label="share">
-                <ShareIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
-        </>
->>>>>>> 6d7d02067691dbe16ea74834887a7993a9c75c77
       ))}
     </Box>
   )

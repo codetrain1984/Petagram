@@ -10,12 +10,13 @@ import {
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import SettingsIcon from '@mui/icons-material/Settings'
 import EditIcon from '@mui/icons-material/Edit'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Postprofile from './Postprofile'
 import Sidebar from '../../Sidebar'
-import EditProfile from './EditProfile'
 
 export default function Profile() {
+  const params = useParams()
+  console.log(params)
   return (
     <>
       <Box width="100%" height="100vh" display="flex">
@@ -55,7 +56,7 @@ export default function Profile() {
                   Pally_2015d
                 </Typography>
 
-                <Link to="<EditProfile />">
+                <Link to="/edit">
                   <EditIcon color="primary" />
                 </Link>
 
