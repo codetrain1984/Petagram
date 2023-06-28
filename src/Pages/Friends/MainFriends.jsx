@@ -16,7 +16,7 @@ import {
   styled,
 } from '@mui/material'
 import React, { useState } from 'react'
-import usePost from '../../../Hook/usePost'
+import usePost from '../../Hook/usePost'
 import { useParams } from 'react-router-dom'
 import PersonAddAltTwoToneIcon from '@mui/icons-material/PersonAddAltTwoTone'
 import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone'
@@ -26,8 +26,8 @@ import StarBorderTwoToneIcon from '@mui/icons-material/StarBorderTwoTone'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import VolumeMuteIcon from '@mui/icons-material/VolumeMute'
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove'
-import Sidebar from '../../Sidebar'
-import Footer from '../../Footer'
+import Sidebar from '../../Components/Sidebar'
+import Footer from '../../Components/Footer'
 
 const followData = [
   {
@@ -112,6 +112,7 @@ export default function MainFriends() {
                     <Button
                       variant="contained"
                       color="secondary"
+                      sx={{ textTransform: 'capitalize' }}
                       endIcon={<ArrowDropDownTwoToneIcon />}
                       onClick={() => setFollowModal(true)}
                     >
@@ -119,12 +120,12 @@ export default function MainFriends() {
                     </Button>
                   )}
                   <Button
-                    sx={{ marginLeft: '15px' }}
+                    sx={{ marginLeft: '15px', textTransform: 'capitalize' }}
                     variant="contained"
                     color="inherit"
                     onClick={handleOpen}
                   >
-                    Message
+                    Messages
                   </Button>
                   <IconButton
                     sx={{ backgroundColor: 'lightgray', marginLeft: '15px' }}

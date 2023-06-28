@@ -1,7 +1,6 @@
 import { ImageList, ImageListItem, Stack, Typography } from '@mui/material'
 import React from 'react'
-import usePost from '../../../Hook/usePost'
-
+import usePost from '../../Hook/usePost'
 export default function Postprofile() {
   const { postData } = usePost()
   return (

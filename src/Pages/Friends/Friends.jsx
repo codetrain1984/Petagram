@@ -9,10 +9,9 @@ import {
 } from '@mui/material'
 import { FaDog } from 'react-icons/fa'
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone'
-import React from 'react'
-import Sidebar from '../../Sidebar'
-import usePost from '../../../Hook/usePost'
 import { Link } from 'react-router-dom'
+import usePost from '../../Hook/usePost'
+import Sidebar from '../../Components/Sidebar'
 
 const StyledFriends = styled(Stack)({
   border: '1px solid #fff',

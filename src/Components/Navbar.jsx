@@ -119,6 +119,7 @@ export default function Navbar({ mode, setMode }) {
             }}
           />
         </StyledToolbar>
+
         <Menu
           id="demo-positioned-menu"
           aria-labelledby="demo-positioned-button"

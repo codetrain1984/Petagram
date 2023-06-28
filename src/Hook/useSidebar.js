@@ -2,20 +2,21 @@ import React from 'react'
 import StorefrontIcon from '@mui/icons-material/Storefront'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import SettingsIcon from '@mui/icons-material/Settings'
-import { FaDog, FaCat } from 'react-icons/fa'
-import { BsHouseDoorFill } from 'react-icons/bs'
+import { FaDog } from 'react-icons/fa'
+import SendIcon from '@mui/icons-material/Send'
+import BungalowIcon from '@mui/icons-material/Bungalow'
 
 const useSidebar = () => {
   const sidebarData = [
     {
       title: 'Home',
-      icon: <BsHouseDoorFill />,
+      icon: <BungalowIcon />,
       link: '/',
     },
     {
-      title: 'Groups',
-      icon: <FaDog />,
-      link: '/groups',
+      title: 'Messages',
+      icon: <SendIcon />,
+      link: '/messages',
     },
     {
       title: 'Marketplace',
@@ -24,7 +25,7 @@ const useSidebar = () => {
     },
     {
       title: 'Friends',
-      icon: <FaCat />,
+      icon: <FaDog />,
       link: '/friends',
     },
     {

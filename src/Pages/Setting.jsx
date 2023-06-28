@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, IconButton, Typography } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
-import Sidebar from '../Sidebar'
+import Sidebar from '../Components/Sidebar'
 
 export default function Setting() {
   return (

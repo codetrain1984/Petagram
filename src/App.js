@@ -1,5 +1,4 @@
 import './App.css'
-import Add from './Components/Add'
 import Navbar from './Components/Navbar'
 import { Box, ThemeProvider, createTheme } from '@mui/material'
 import routes from './routes'
@@ -22,8 +21,6 @@ function App() {
         <Navbar mode={mode} setMode={setMode} />
 
         {router}
-
-        <Add />
       </Box>
     </ThemeProvider>
   )

@@ -12,7 +12,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import EditIcon from '@mui/icons-material/Edit'
 import { Link, useParams } from 'react-router-dom'
 import Postprofile from './Postprofile'
-import Sidebar from '../../Sidebar'
+import Sidebar from '../../Components/Sidebar'
 
 export default function Profile() {
   const params = useParams()
@@ -23,6 +23,7 @@ export default function Profile() {
         <Box flex={1}>
           <Sidebar />
         </Box>
+        <Divider orientation="vertical" />
         <Box flex={4}>
           <Box display="flex" justifyContent="center" p={3}>
             <Stack

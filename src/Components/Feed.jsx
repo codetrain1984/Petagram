@@ -12,7 +12,6 @@ import {
   ListItemIcon,
   Menu,
   MenuItem,
-  MenuList,
   Typography,
 } from '@mui/material'
 import ShareIcon from '@mui/icons-material/Share'
@@ -24,9 +23,10 @@ import usePost from '../Hook/usePost'
 import StarOutlineIcon from '@mui/icons-material/StarOutline'
 import ReportGmailerrorredIcon from '@mui/icons-material/ReportGmailerrorred'
 import { useTrueFalse } from '../Hook/useTrueFalse'
+import FeedShare from './FeedShare'
 
 export default function Feed() {
-  const [state, toggle] = useTrueFalse(false)
+  const [shareItems, setShareItems] = useTrueFalse(false)
 
   const [anchorEl, setAnchorEl] = useState(null)
   const { postData } = usePost()
@@ -102,6 +102,7 @@ export default function Feed() {
               {post.desc}
             </Typography>
           </CardContent>
+
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
               <Checkbox
@@ -109,43 +110,7 @@ export default function Feed() {
                 checkedIcon={<FavoriteIcon sx={{ color: 'red' }} />}
               />
             </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon onClick={toggle} />
-            </IconButton>
-            {state && (
-              <MenuList>
-                <MenuItem>
-                  <img
-                    width={30}
-                    height={30}
-                    src="/Share/Telegram_logo.png"
-                    alt="Telegram"
-                    style={{ marginLeft: '5px' }}
-                  />
-                  <img
-                    width={30}
-                    height={30}
-                    src="/Share/Instagram_icon.png"
-                    alt="Telegram"
-                    style={{ marginLeft: '5px' }}
-                  />
-                  <img
-                    width={30}
-                    height={30}
-                    src="/Share/WhatsApp_icon.png"
-                    alt="Telegram"
-                    style={{ marginLeft: '5px' }}
-                  />
-                  <img
-                    width={30}
-                    height={30}
-                    src="/Share/linkedin-icon.png"
-                    alt="Telegram"
-                    style={{ marginLeft: '5px' }}
-                  />
-                </MenuItem>
-              </MenuList>
-            )}
+            <FeedShare />
           </CardActions>
         </Card>
       ))}
