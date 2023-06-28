@@ -12,7 +12,9 @@ export default function Setting() {
           <IconButton>
             <SettingsIcon />
           </IconButton>
-          <Typography variant="h1">Setting</Typography>
+          <Typography sx={{ fontSize: { xs: '45px', sm: '80px' } }}>
+            Setting
+          </Typography>
         </Box>
       </Box>
     </>

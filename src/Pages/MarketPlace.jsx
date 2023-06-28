@@ -13,7 +13,9 @@ export default function MarketPlace() {
           <IconButton>
             <StorefrontIcon />
           </IconButton>
-          <Typography variant="h1">MarketPlace</Typography>
+          <Typography sx={{ fontSize: { xs: '45px', sm: '80px' } }}>
+            MarketPlace
+          </Typography>
         </Box>
       </Box>
     </>

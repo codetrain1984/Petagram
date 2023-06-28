@@ -6,12 +6,8 @@ import {
   Box,
   IconButton,
   InputBase,
-  ListItemIcon,
-  ListItemText,
   Menu,
   MenuItem,
-  MenuList,
-  Paper,
   Stack,
   Toolbar,
   styled,
@@ -29,6 +25,7 @@ import { useTrueFalse } from '../Hook/useTrueFalse'
 
 export default function Navbar({ mode, setMode }) {
   const [searchBtn, setSearchBtn] = useTrueFalse(false)
+  const [anchorEl, setAnchorEl] = useState(null)
   const [menu, setMenu] = useState(false)
   const [open, setOpen] = useState(false)
   const [theme, setTheme] = useTrueFalse(false)
@@ -55,6 +52,12 @@ export default function Navbar({ mode, setMode }) {
       display: 'flex',
     },
   }))
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
 
   return (
     <>
@@ -124,7 +127,7 @@ export default function Navbar({ mode, setMode }) {
           id="demo-positioned-menu"
           aria-labelledby="demo-positioned-button"
           open={open}
-          onClose={() => setOpen(false)}
+          onClick={() => setOpen(false)}
           anchorOrigin={{
             vertical: 'top',
             horizontal: 'right',
@@ -151,40 +154,34 @@ export default function Navbar({ mode, setMode }) {
           </MenuItem>
         </Menu>
       </AppBar>
-      {menu && (
-        <Paper
-          id="demo-positioned-menu"
-          aria-labelledby="demo-positioned-button"
-          open={menu}
-          onClose={() => setMenu(false)}
-          sx={{
-            display: {
-              xs: 'block',
-              sm: 'none',
-            },
-            width: '40%',
-            position: 'fixed',
-            zIndex: '9999',
-            marginTop: '2px',
-          }}
-        >
-          {sidebarData.map((sidebar) => (
-            <Stack>
-              <MenuList>
-                <Link
-                  to={sidebar.link}
-                  style={{ textDecoration: 'none', color: 'GrayText' }}
-                >
-                  <MenuItem onClose={() => setMenu(false)}>
-                    <ListItemIcon>{sidebar.icon}</ListItemIcon>
-                    <ListItemText>{sidebar.title}</ListItemText>
-                  </MenuItem>
-                </Link>
-              </MenuList>
-            </Stack>
-          ))}
-        </Paper>
-      )}
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={menu}
+        onClose={() => setMenu(false)}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        {sidebarData.map((side) => (
+          <Box onClick={() => setMenu(false)}>
+            <Link
+              to={side.link}
+              style={{ textDecoration: 'none', color: '#888' }}
+            >
+              <Stack direction={'row'}>
+                <MenuItem>{side.icon}</MenuItem>
+                <MenuItem>{side.title}</MenuItem>
+              </Stack>
+            </Link>
+          </Box>
+        ))}
+      </Menu>
     </>
   )
 }
