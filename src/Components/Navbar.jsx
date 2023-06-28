@@ -25,7 +25,6 @@ import { useTrueFalse } from '../Hook/useTrueFalse'
 
 export default function Navbar({ mode, setMode }) {
   const [searchBtn, setSearchBtn] = useTrueFalse(false)
-  const [anchorEl, setAnchorEl] = useState(null)
   const [menu, setMenu] = useState(false)
   const [open, setOpen] = useState(false)
   const [theme, setTheme] = useTrueFalse(false)
@@ -52,12 +51,6 @@ export default function Navbar({ mode, setMode }) {
       display: 'flex',
     },
   }))
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
 
   return (
     <>
