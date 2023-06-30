@@ -60,18 +60,20 @@ const style = {
   boxShadow: 20,
   p: 2,
 }
-// const StyledFollow = styled(Stack)({
-//   '&:hover': { backgroundColor: 'whitesmoke' },
-//   alignItems: 'center',
-//   justifyContent: 'space-between',
-//   marginTop: '8px',
-//   padding: '8px',
-//   cursor: 'pointer',
-// })
-const ExraModal = styled(Modal)({
+const ExtraModal = styled(Modal)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+})
+const StyledProfile = styled(Stack)({
+  display: 'flex',
+  flexDirection: { xs: 'column', sm: 'row' },
+  alignItems: 'center',
+})
+const StyledItems = styled(Stack)({
+  display: 'flex',
+  flexDirection: { xs: 'column', sm: 'row' },
+  alignItems: 'center',
 })
 
 export default function MainFriends() {
@@ -91,19 +93,33 @@ export default function MainFriends() {
       <Box display="flex" height="100vh">
         <Sidebar />
         <Box flex={4}>
-          <Stack p={5} direction="row" alignItems="center">
+          <StyledItems>
             <Avatar
-              sx={{ width: '280px', height: '280px' }}
+              sx={{
+                width: { xs: '80px', sm: '220px' },
+                height: { xs: '80px', sm: '220px' },
+                marginTop: '40px',
+              }}
               alt={mainFrineds.name}
               src={mainFrineds.img}
             />
             <Stack direction="column" alignItems="center">
-              <Stack direction="row" alignItems="center">
-                <Typography ml={5} variant="h2">
+              <StyledProfile>
+                <Typography
+                  sx={{
+                    fontSize: { xs: '20px', sm: '50px' },
+                    marginLeft: { xs: '0', sm: '10px' },
+                    marginTop: '15px',
+                    marginBottom: '15px',
+                  }}
+                >
                   {mainFrineds.name}
                 </Typography>
 
-                <Stack direction="row" ml={5}>
+                <Stack
+                  direction="row"
+                  sx={{ marginLeft: { xs: 0, sm: '15px' } }}
+                >
                   {mainFrineds.status === 'follow' ? (
                     <Button variant="contained" color="primary">
                       Follow
@@ -127,32 +143,58 @@ export default function MainFriends() {
                   >
                     Messages
                   </Button>
-                  <IconButton
-                    sx={{ backgroundColor: 'lightgray', marginLeft: '15px' }}
+                  <Stack
+                    sx={{ display: { xs: 'none', sm: 'block' } }}
+                    direction={'row'}
                   >
-                    <PersonAddAltTwoToneIcon color="secondary" />
-                  </IconButton>
-                  <IconButton
-                    onClick={() => setExtra(true)}
-                    sx={{ backgroundColor: 'lightgray', marginLeft: '15px' }}
-                  >
-                    <MoreVertIcon color="secondary" />
-                  </IconButton>
+                    <IconButton
+                      sx={{ backgroundColor: 'lightgray', marginLeft: '15px' }}
+                    >
+                      <PersonAddAltTwoToneIcon color="secondary" />
+                    </IconButton>
+                    <IconButton
+                      onClick={() => setExtra(true)}
+                      sx={{ backgroundColor: 'lightgray', marginLeft: '15px' }}
+                    >
+                      <MoreVertIcon color="secondary" />
+                    </IconButton>
+                  </Stack>
                 </Stack>
-              </Stack>
+              </StyledProfile>
 
-              <Stack direction="row" spacing={2} mt={3}>
-                <Typography>{mainFrineds.post} posts</Typography>
-                <Typography>{mainFrineds.followers} followers</Typography>
-                <Typography>{mainFrineds.following} following</Typography>
+              <Stack direction="row" spacing={2} mt={3} mb={5}>
+                <Typography sx={{ fontSize: { xs: '14px', sm: '16px' } }}>
+                  {mainFrineds.post} posts
+                </Typography>
+                <Typography sx={{ fontSize: { xs: '14px', sm: '16px' } }}>
+                  {mainFrineds.followers} followers
+                </Typography>
+                <Typography sx={{ fontSize: { xs: '14px', sm: '16px' } }}>
+                  {mainFrineds.following} following
+                </Typography>
               </Stack>
             </Stack>
-          </Stack>
-          <Stack width="80%" mt={5}>
-            <Typography variant="h4" mb={2}>
+          </StyledItems>
+          <Stack
+            sx={{
+              display: 'flex',
+              width: { xs: '90%', sm: '80%' },
+
+              margin: { xs: 'auto', sm: '0' },
+            }}
+          >
+            <Typography
+              mb={2}
+              sx={{
+                textAlign: { xs: 'center', sm: 'left' },
+                fontSize: { xs: '25px', sm: '50px' },
+              }}
+            >
               About
             </Typography>
-            <Typography>{mainFrineds.desc}</Typography>
+            <Typography sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
+              {mainFrineds.desc}
+            </Typography>
           </Stack>
         </Box>
       </Box>
@@ -215,7 +257,7 @@ export default function MainFriends() {
         </Box>
       </Modal>
 
-      <ExraModal
+      <ExtraModal
         open={extra}
         onClose={handleExtra}
         aria-labelledby="modal-modal-title"
@@ -267,7 +309,7 @@ export default function MainFriends() {
             </List>
           </Stack>
         </Box>
-      </ExraModal>
+      </ExtraModal>
     </>
   )
 }

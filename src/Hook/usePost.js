@@ -65,7 +65,7 @@ const usePost = () => {
       desc:
         'Animals are a window to your soul and a doorway to your spiritual destiny. If you let them into your life and allow them to teach you, you will be better for it.” “Animals are a gift from above for they truly define the words unconditional love.',
       img: '/Image/group/Cat.jpg',
-      date: 'September 19, 2023',
+      date: 'September 6, 2023',
       name: 'Cheesy',
       status: 'Following',
       followers: '373',
@@ -77,8 +77,8 @@ const usePost = () => {
       desc:
         'Animals are a window to your soul and a doorway to your spiritual destiny. If you let them into your life and allow them to teach you, you will be better for it.” “Animals are a gift from above for they truly define the words unconditional love.',
       img: '/Image/group/parrot.jpg',
-      date: 'September 19, 2023',
-      name: 'Baloo ',
+      date: 'September 2, 2023',
+      name: 'Baloo',
       status: 'Following',
       followers: '619',
       following: '564',
