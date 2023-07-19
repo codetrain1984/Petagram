@@ -14,7 +14,6 @@ import {
   MenuItem,
   Typography,
 } from '@mui/material'
-import ShareIcon from '@mui/icons-material/Share'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -22,12 +21,9 @@ import LinkIcon from '@mui/icons-material/Link'
 import usePost from '../Hook/usePost'
 import StarOutlineIcon from '@mui/icons-material/StarOutline'
 import ReportGmailerrorredIcon from '@mui/icons-material/ReportGmailerrorred'
-import { useTrueFalse } from '../Hook/useTrueFalse'
 import FeedShare from './FeedShare'
 
 export default function Feed() {
-  const [shareItems, setShareItems] = useTrueFalse(false)
-
   const [anchorEl, setAnchorEl] = useState(null)
   const { postData } = usePost()
   const open = Boolean(anchorEl)

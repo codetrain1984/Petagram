@@ -5,6 +5,7 @@ import {
   Divider,
   IconButton,
   Stack,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
@@ -13,6 +14,8 @@ import EditIcon from '@mui/icons-material/Edit'
 import { Link, useParams } from 'react-router-dom'
 import Postprofile from './Postprofile'
 import Sidebar from '../../Components/Sidebar'
+import PersonAddIcon from '@mui/icons-material/PersonAdd'
+import { FriendBox, FriendsTitle } from '../../styles/profile'
 
 export default function Profile() {
   const params = useParams()
@@ -58,11 +61,20 @@ export default function Profile() {
                 </Typography>
 
                 <Link to="/edit">
-                  <EditIcon color="primary" />
+                  <Tooltip title="Edit">
+                    <EditIcon color="primary" />
+                  </Tooltip>
                 </Link>
 
                 <Link to="/setting">
-                  <SettingsIcon />
+                  <Tooltip title="Setting">
+                    <SettingsIcon />
+                  </Tooltip>
+                </Link>
+                <Link to="/addAccount">
+                  <Tooltip title="Add account">
+                    <PersonAddIcon />
+                  </Tooltip>
                 </Link>
               </Stack>
               <Stack
@@ -86,25 +98,9 @@ export default function Profile() {
             </Box>
           </Box>
 
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            mt={4}
-            mb={4}
-          >
+          <FriendBox>
             <Box>
-              <Typography
-                sx={{
-                  fontSize: { xs: '20px', sm: '25px' },
-                  textAlign: 'center',
-                  marginBottom: '10px',
-                }}
-                pt={3}
-                pb={3}
-              >
-                Friends
-              </Typography>
+              <FriendsTitle>Friends</FriendsTitle>
               <Stack
                 sx={{ width: { xs: '80%', sm: '100%' }, display: 'flex' }}
                 direction="row"
@@ -127,7 +123,7 @@ export default function Profile() {
                 </Link>
               </Stack>
             </Box>
-          </Box>
+          </FriendBox>
           <Divider variant="middle" />
           <Postprofile />
         </Box>

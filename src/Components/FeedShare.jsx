@@ -55,18 +55,6 @@ export default function FeedShare() {
           </MenuItem>
         </Menu>
       </div>
-
-      {/* <Stack direction="row" spacing={1}>
-        <MenuList>
-          <MenuItem>
-            <Avatar
-              sx={{ width: '30px', height: '30px', mr: '5px' }}
-              alt={share.title}
-              src={share.img}
-            />
-          </MenuItem>
-        </MenuList>
-      </Stack> */}
     </>
   )
 }

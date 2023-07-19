@@ -9,8 +9,6 @@ import {
   Menu,
   MenuItem,
   Stack,
-  Toolbar,
-  styled,
 } from '@mui/material'
 import PetsIcon from '@mui/icons-material/Pets'
 import SearchIcon from '@mui/icons-material/Search'
@@ -22,6 +20,7 @@ import useSidebar from '../Hook/useSidebar'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from 'react-router-dom'
 import { useTrueFalse } from '../Hook/useTrueFalse'
+import { IconBox, SearchBox, StyledToolbar } from '../styles/navbar'
 
 export default function Navbar({ mode, setMode }) {
   const [searchBtn, setSearchBtn] = useTrueFalse(false)
@@ -29,28 +28,6 @@ export default function Navbar({ mode, setMode }) {
   const [open, setOpen] = useState(false)
   const [theme, setTheme] = useTrueFalse(false)
   const { sidebarData } = useSidebar()
-
-  const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: theme.palette.secondary.main,
-  }))
-  const SearchBox = styled('div')(({ theme }) => ({
-    backgroundColor: '#fff',
-    padding: '0 10px',
-    borderRadius: theme.shape.borderRadius,
-    width: '60%',
-  }))
-  const IconBox = styled(Box)(({ theme }) => ({
-    display: 'none',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '15px',
-    [theme.breakpoints.up('sm')]: {
-      display: 'flex',
-    },
-  }))
 
   return (
     <>
@@ -84,7 +61,7 @@ export default function Navbar({ mode, setMode }) {
 
           <IconBox>
             {searchBtn && (
-              <SearchBox>
+              <SearchBox searchBtn={searchBtn}>
                 <InputBase placeholder="Search..." />
               </SearchBox>
             )}
@@ -94,18 +71,50 @@ export default function Navbar({ mode, setMode }) {
             />
 
             <Stack onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
-              <IconButton onClick={setTheme}>
+              <IconButton
+                onClick={setTheme}
+                sx={{
+                  cursor: 'pointer',
+                  transition: 'all 0.4s',
+                  '&:hover': { transform: 'scale(1.2)' },
+                }}
+              >
                 {theme ? <WbSunnyIcon color="warning" /> : <DarkModeIcon />}
               </IconButton>
             </Stack>
 
-            <Badge badgeContent={5} color="primary">
+            <Badge
+              badgeContent={5}
+              color="primary"
+              sx={{
+                cursor: 'pointer',
+                transition: 'all 0.4s',
+                '&:hover': { transform: 'scale(1.2)' },
+              }}
+            >
               <MailIcon />
             </Badge>
-            <Badge badgeContent={1} color="primary">
+            <Badge
+              badgeContent={1}
+              color="primary"
+              sx={{
+                cursor: 'pointer',
+                transition: 'all 0.4s',
+                '&:hover': { transform: 'scale(1.2)' },
+              }}
+            >
               <NotificationsIcon />
             </Badge>
-            <Avatar sx={{ width: 40, height: 40 }} src="/Image/small-dog.jpg" />
+            <Avatar
+              sx={{
+                width: 40,
+                height: 40,
+                cursor: 'pointer',
+                transition: 'all 0.4s',
+                '&:hover': { transform: 'scale(1.2)' },
+              }}
+              src="/Image/small-dog.jpg"
+            />
           </IconBox>
 
           <PetsIcon

@@ -6,6 +6,7 @@ import Setting from './Pages/Setting'
 import EditProfile from './Pages/Profile/EditProfile'
 import MainFriends from './Pages/Friends/MainFriends'
 import Messages from './Pages/Messages/Messages'
+import AddAccount from './Pages/Profile/AddAccount'
 
 const routes = [
   {
@@ -40,6 +41,10 @@ const routes = [
   {
     path: '/messages',
     element: <Messages />,
+  },
+  {
+    path: '/addAccount',
+    element: <AddAccount />,
   },
 ]
 export default routes

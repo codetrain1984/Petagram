@@ -5,11 +5,14 @@ import routes from './routes'
 
 import { useRoutes } from 'react-router-dom'
 import { useState } from 'react'
+import Login from './Pages/Login'
 // import Sidebar from './Components/Sidebar'
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [mode, setMode] = useState('light')
   const router = useRoutes(routes)
+
   const darkTheme = createTheme({
     palette: {
       mode: mode,
@@ -17,11 +20,14 @@ function App() {
   })
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box bgcolor={'background.default'} color={'text.primary'}>
-        <Navbar mode={mode} setMode={setMode} />
-
-        {router}
-      </Box>
+      {isLoggedIn ? (
+        <Login />
+      ) : (
+        <Box bgcolor={'background.default'} color={'text.primary'}>
+          <Navbar mode={mode} setMode={setMode} />
+          {router}
+        </Box>
+      )}
     </ThemeProvider>
   )
 }

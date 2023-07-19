@@ -1,24 +1,15 @@
 import {
-  Avatar,
   AvatarGroup,
   Box,
   ImageList,
   ImageListItem,
   Typography,
-  styled,
 } from '@mui/material'
 import React from 'react'
 import RightbarLists from './RightbarLists'
+import { StyledAvatar } from '../styles/rightbar'
 
 export default function Rightbar() {
-  const StyledAvatar = styled(Avatar)({
-    '&:hover': {
-      width: '50px',
-      height: '50px',
-      cursor: 'pointer',
-      transition: 'all 0.5s ease',
-    },
-  })
   return (
     <Box
       flex={2}
@@ -36,17 +27,45 @@ export default function Rightbar() {
           }}
         >
           <StyledAvatar
-            sx={{ transition: 'transform: scale(1.5)' }}
+            sx={{ '&:hover': { transform: 'scale(1.2)' } }}
             alt="Remy Sharp"
             src="/Image/group/parrot.jpg"
           />
-          <StyledAvatar alt="Remy Sharp" src="/Image/group/pet-rabbit.jpg" />
-          <StyledAvatar alt="Remy Sharp" src="/Image/group/Cat.jpg" />
-          <StyledAvatar alt="Remy Sharp" src="/Image/group/GettyImages.jpg" />
-          <StyledAvatar alt="Remy Sharp" src="/Image/group/4.jpg" />
-          <StyledAvatar alt="Remy Sharp" src="/Image/group/4.jpg" />
-          <StyledAvatar alt="Remy Sharp" src="/Image/group/4.jpg" />
-          <StyledAvatar alt="Remy Sharp" src="/Image/group/4.jpg" />
+          <StyledAvatar
+            sx={{ '&:hover': { transform: 'scale(1.2)' } }}
+            alt="Remy Sharp"
+            src="/Image/group/pet-rabbit.jpg"
+          />
+          <StyledAvatar
+            sx={{ '&:hover': { transform: 'scale(1.2)' } }}
+            alt="Remy Sharp"
+            src="/Image/group/Cat.jpg"
+          />
+          <StyledAvatar
+            sx={{ '&:hover': { transform: 'scale(1.2)' } }}
+            alt="Remy Sharp"
+            src="/Image/group/GettyImages.jpg"
+          />
+          <StyledAvatar
+            sx={{ '&:hover': { transform: 'scale(1.2)' } }}
+            alt="Remy Sharp"
+            src="/Image/group/4.jpg"
+          />
+          <StyledAvatar
+            sx={{ '&:hover': { transform: 'scale(1.2)' } }}
+            alt="Remy Sharp"
+            src="/Image/group/4.jpg"
+          />
+          <StyledAvatar
+            sx={{ '&:hover': { transform: 'scale(1.2)' } }}
+            alt="Remy Sharp"
+            src="/Image/group/4.jpg"
+          />
+          <StyledAvatar
+            sx={{ '&:hover': { transform: 'scale(1.2)' } }}
+            alt="Remy Sharp"
+            src="/Image/group/4.jpg"
+          />
         </AvatarGroup>
         <Typography variant="h6">Latest Photos</Typography>
         <ImageList
