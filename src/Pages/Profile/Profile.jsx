@@ -12,10 +12,10 @@ import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import SettingsIcon from '@mui/icons-material/Settings'
 import EditIcon from '@mui/icons-material/Edit'
 import { Link, useParams } from 'react-router-dom'
-import Postprofile from './Postprofile'
 import Sidebar from '../../Components/Sidebar'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import { FriendBox, FriendsTitle } from '../../styles/profile'
+import Postprofile from './Postprofile'
 
 export default function Profile() {
   const params = useParams()

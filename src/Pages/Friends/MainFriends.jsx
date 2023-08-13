@@ -15,7 +15,8 @@ import {
   Typography,
   styled,
 } from '@mui/material'
-import React, { useState } from 'react'
+import './friends.css'
+import React, { useRef, useState } from 'react'
 import usePost from '../../Hook/usePost'
 import { useParams } from 'react-router-dom'
 import PersonAddAltTwoToneIcon from '@mui/icons-material/PersonAddAltTwoTone'
@@ -80,6 +81,7 @@ export default function MainFriends() {
   const [messageModal, setMessageModal] = useState(false)
   const [followModal, setFollowModal] = useState(false)
   const [extra, setExtra] = useState(false)
+  const messageRef = useRef()
   const { postData } = usePost()
   const params = useParams()
   const mainFrineds = postData.find((post) => post.name === params.friendName)
@@ -87,6 +89,9 @@ export default function MainFriends() {
   const handleClose = () => setMessageModal(false)
   const handleFollow = () => setFollowModal(true)
   const handleExtra = () => setExtra(false)
+  const handleAdd = () => {
+    messageRef.current.classList.add('titleColor')
+  }
 
   return (
     <>
@@ -106,6 +111,7 @@ export default function MainFriends() {
             <Stack direction="column" alignItems="center">
               <StyledProfile>
                 <Typography
+                  ref={messageRef}
                   sx={{
                     fontSize: { xs: '20px', sm: '50px' },
                     marginLeft: { xs: '0', sm: '10px' },
@@ -148,6 +154,7 @@ export default function MainFriends() {
                     direction={'row'}
                   >
                     <IconButton
+                      onClick={handleAdd}
                       sx={{ backgroundColor: 'lightgray', marginLeft: '15px' }}
                     >
                       <PersonAddAltTwoToneIcon color="secondary" />

@@ -7,12 +7,10 @@ export const FriendsTitle = styled(Typography)({
   paddingTop: 3,
   paddingBottom: 3,
 })
-export const FriendBox = styled(
-  Box({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 4,
-    marginBottom: 4,
-  }),
-)
+export const FriendBox = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginTop: 4,
+  marginBottom: 4,
+})

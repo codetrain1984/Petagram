@@ -7,11 +7,16 @@ import EditProfile from './Pages/Profile/EditProfile'
 import MainFriends from './Pages/Friends/MainFriends'
 import Messages from './Pages/Messages/Messages'
 import AddAccount from './Pages/Profile/AddAccount'
+import Login from './Pages/Login'
 
 const routes = [
   {
     path: '/',
     element: <HomePage />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
   {
     path: '/profile',
